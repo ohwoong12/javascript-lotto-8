@@ -1,0 +1,33 @@
+export const CONSOLE_MESSAGE = {
+  PURCHASE_MONEY: '구입금액을 입력해 주세요.',
+  PURCHASE_AMOUNT: '개를 구매했습니다.',
+  CORRECT_NUMBER: '당첨 번호를 입력해 주세요.',
+  BONUS_NUMBER: '보너스 번호를 입력해 주세요.',
+};
+
+export const WINNING_STATISTICS_MESSAGE = {
+  AMOUNT: '개',
+  MATCH_THREE: '3개 일치 (5,000원) - ',
+  MATCH_FOUR: '4개 일치 (50,000원) - ',
+  MATCH_FIVE_NO_BONUS: '5개 일치 (1,500,000원) - ',
+  MATCH_FIVE_BONUS: '5개 일치, 보너스 볼 일치 (30,000,000원) - ',
+  MATCH_SIX: '6개 일치 (2,000,000,000원) - ',
+};
+
+export const LOTTO_CALCULATE_NUMBER = {
+  PER_LOTTO_PRICE: 1000,
+  FIRST_WIN_LOTTO: 2000000000,
+  SECOND_WIN_LOTTO: 30000000,
+  THIRD_WIN_LOTTO: 1500000,
+  FOURTH_WIN_LOTTO: 50000,
+  FIFTH_WIN_LOTTO: 5000,
+};
+
+export const ERROR_MESSAGE = {
+  INVALID_INPUT: '입력이 되지 않았습니다.',
+  INVALID_PURCHASE_MONEY: '로또 구매 금액은 1,000원 단위로만 가능합니다.',
+  INVALID_CORRECT_NUMBER: '당첨 번호가 6개만 입력 가능합니다.',
+  INVALID_BONUS_NUMBER: '보너스 번호는 1개만 입력 가능합니다.',
+  INVALID_INPUT_TYPE: '숫자만 입력 가능합니다.',
+  INVALID_LOTTO_NUMBER_RANGE: '로또 번호가 1~45 범위내로 발행되지 않았습니다.',
+};

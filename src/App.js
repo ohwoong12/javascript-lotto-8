@@ -9,6 +9,9 @@ class App {
 
     const winningNumber = await InputLotto.getCorrectNumber();
     Console.print('');
+
+    const bonusNumber = await InputLotto.getBonusNumber();
+    Console.print('');
   }
 }
 

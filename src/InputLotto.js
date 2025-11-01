@@ -1,3 +1,4 @@
+import { Console } from '@woowacourse/mission-utils';
 import { CONSOLE_MESSAGE } from './Constants.js';
 
 /**
@@ -46,4 +47,18 @@ export async function getCorrectNumber() {
   const splitWinningNumber = stringToInt(splitValue(winningNumber));
 
   return splitWinningNumber;
+}
+
+/**
+ * 1개의 보너스 번호를 입력받고 배열로 반환하는 함수
+ * @returns {Promise<string[]>} - 보너스 번호가 담긴 문자열 배열
+ */
+export async function getBonusNumber() {
+  const bonusNumber = await Console.readLineAsync(
+    `${CONSOLE_MESSAGE.BONUS_NUMBER}\n`,
+  );
+
+  const splitBonusNumber = stringToInt(splitValue(bonusNumber));
+
+  return splitBonusNumber;
 }

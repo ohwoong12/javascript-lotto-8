@@ -1,7 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import * as InputLotto from './InputLotto.js';
 import LottoGnerator from './LottoGnerator.js';
-import { CONSOLE_MESSAGE } from './Constants.js';
+import sortLotto from './SortLotto.js';
 
 class App {
   async run() {
@@ -11,6 +11,8 @@ class App {
 
     const lottoNumberArray = LottoGnerator(purchaseCount);
     Console.print(`\n${purchaseCount}${CONSOLE_MESSAGE.PURCHASE_AMOUNT}`);
+
+    const sortedLottoNumberArray = sortLotto(lottoNumberArray);
 
     const winningNumber = await InputLotto.getCorrectNumber();
     Console.print('');

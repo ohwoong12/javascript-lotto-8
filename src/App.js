@@ -6,6 +6,9 @@ class App {
     const purchaseCost = await InputLotto.getLottoMoney();
 
     const purchaseCount = purchaseCost / LOTTO_CALCULATE_NUMBER.PER_LOTTO_PRICE;
+
+    const winningNumber = await InputLotto.getCorrectNumber();
+    Console.print('');
   }
 }
 

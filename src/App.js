@@ -1,11 +1,16 @@
 import { Console } from '@woowacourse/mission-utils';
 import * as InputLotto from './InputLotto.js';
+import LottoGnerator from './LottoGnerator.js';
+import { CONSOLE_MESSAGE } from './Constants.js';
 
 class App {
   async run() {
     const purchaseCost = await InputLotto.getLottoMoney();
 
     const purchaseCount = purchaseCost / LOTTO_CALCULATE_NUMBER.PER_LOTTO_PRICE;
+
+    const lottoNumberArray = LottoGnerator(purchaseCount);
+    Console.print(`\n${purchaseCount}${CONSOLE_MESSAGE.PURCHASE_AMOUNT}`);
 
     const winningNumber = await InputLotto.getCorrectNumber();
     Console.print('');

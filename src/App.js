@@ -5,6 +5,7 @@ import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
 import { printProfitRate, printStatistics } from './CalculateLottoResult.js';
+import { printLottoTicket } from './view/OutputView.js';
 
 class App {
   async run() {
@@ -21,10 +22,7 @@ class App {
       (ticketNumbers) => new Lotto(ticketNumbers),
     );
 
-    for (let i = 0; i < lottoObjects.length; i += 1) {
-      lottoObjects[i].printLottoNumbers();
-    }
-    Console.print('');
+    printLottoTicket(lottoObjects);
 
     const winningNumber = await InputLotto.getCorrectNumber();
     Console.print('');

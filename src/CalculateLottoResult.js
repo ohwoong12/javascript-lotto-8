@@ -1,9 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import {
-  LOTTO_CALCULATE_NUMBER,
-  RANKING_INFO,
-  WINNING_STATISTICS_MESSAGE,
-} from './Constants.js';
+import { RANKING_INFO, WINNING_STATISTICS_MESSAGE } from './Constants.js';
 
 /**
  * 등수가 담겨있는 배열을 각 등수 별로 몇개인지 세어 새로운 배열로 반환하는 함수

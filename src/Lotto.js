@@ -8,6 +8,8 @@ class Lotto {
     this.#numbers = numbers;
   }
 
+  // 추후 검사 로직 코드 개선 예정
+  // eslint-disable-next-line
   #validate(numbers) {
     if (numbers.length !== 6) {
       throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");

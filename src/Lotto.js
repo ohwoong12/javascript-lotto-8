@@ -16,6 +16,9 @@ class Lotto {
     if (numbers.length !== set.size) {
       throw new Error('[ERROR] 로또 번호에 중복된 숫자가 있습니다.');
     }
+    if (numbers.every((ele) => typeof ele === 'number') !== true) {
+      throw new Error('[ERROR] 숫자만 입력 가능');
+    }
   }
 
   // TODO: 추가 기능 구현

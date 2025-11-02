@@ -4,12 +4,12 @@ import LottoGnerator from './LottoGnerator.js';
 import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
+import { countRanks, calculateProfitRate } from './CalculateLottoResult.js';
 import {
-  countRanks,
+  printLottoTicket,
   printProfitRate,
   printStatistics,
-} from './CalculateLottoResult.js';
-import { printLottoTicket } from './view/OutputView.js';
+} from './view/OutputView.js';
 
 class App {
   async run() {
@@ -44,7 +44,9 @@ class App {
     const lottoWinnerArray = countRanks(sortedlottoRankArray);
 
     printStatistics(lottoWinnerArray);
-    printProfitRate(purchaseCost, lottoWinnerArray);
+
+    const profitRate = calculateProfitRate(purchaseCost, lottoWinnerArray);
+    printProfitRate(profitRate);
   }
 }
 

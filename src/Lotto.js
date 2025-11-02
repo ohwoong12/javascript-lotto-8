@@ -50,5 +50,31 @@ class Lotto {
   #hasBonusNumber(bonusNumber) {
     return this.#numbers.includes(bonusNumber);
   }
+
+  /**
+   * 당첨된 번호의 개수를 기반으로 등수를 산정하는 함수
+   * @param {number[]} matchCount - 당첨된 번호의 개수가 담긴 배열
+   * @param {boolean} bonusNumber - 보너스 번호 존재 여부
+   * @returns
+   */
+  #calculateRank(matchCount, bonusNumber) {
+    const hasBonusNumber = this.#hasBonusNumber(bonusNumber);
+    if (matchCount === 6) {
+      return 1;
+    }
+    if (matchCount === 5 && hasBonusNumber) {
+      return 2;
+    }
+    if (matchCount === 5 && !hasBonusNumber) {
+      return 3;
+    }
+    if (matchCount === 4) {
+      return 4;
+    }
+    if (matchCount === 3) {
+      return 5;
+    }
+    return 0;
+  }
 }
 export default Lotto;

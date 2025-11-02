@@ -38,3 +38,19 @@ export function printStatistics(ranksArray) {
     `${WINNING_STATISTICS_MESSAGE.MATCH_SIX}${lottoWinnerArray[1]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
   );
 }
+
+/**
+ * 로또 상금을 계산하는 함수
+ * @param {number[]} lottoWinnerArray - 1~5등이 몇개인지 순서대로 담겨있는 배열
+ * @returns {number} - 총 상금
+ */
+export function calculateLottoPrizeMoney(lottoWinnerArray) {
+  const winRate =
+    lottoWinnerArray[5] * LOTTO_CALCULATE_NUMBER.FIFTH_WIN_LOTTO +
+    lottoWinnerArray[4] * LOTTO_CALCULATE_NUMBER.FOURTH_WIN_LOTTO +
+    lottoWinnerArray[3] * LOTTO_CALCULATE_NUMBER.THIRD_WIN_LOTTO +
+    lottoWinnerArray[2] * LOTTO_CALCULATE_NUMBER.SECOND_WIN_LOTTO +
+    lottoWinnerArray[1] * LOTTO_CALCULATE_NUMBER.FIRST_WIN_LOTTO;
+
+  return winRate;
+}

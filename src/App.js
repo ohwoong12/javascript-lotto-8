@@ -37,6 +37,8 @@ class App {
       ele.showFinalResult(winningNumber, bonusNumber),
     );
     const sortedlottoRankArray = lottoRankArray.sort((a, b) => a - b);
+
+    printStatistics(sortedlottoRankArray);
   }
 }
 

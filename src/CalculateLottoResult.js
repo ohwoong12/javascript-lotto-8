@@ -12,3 +12,29 @@ export function countRanks(ranksArray) {
   }, initialArray);
   return countsArray;
 }
+
+/**
+ * 당첨 통계를 출력하는 함수
+ * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
+ */
+export function printStatistics(ranksArray) {
+  const lottoWinnerArray = countRanks(ranksArray);
+  Console.print(lottoWinnerArray);
+
+  Console.print(`${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
+  Console.print(
+    `${WINNING_STATISTICS_MESSAGE.MATCH_THREE}${lottoWinnerArray[5]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+  );
+  Console.print(
+    `${WINNING_STATISTICS_MESSAGE.MATCH_FOUR}${lottoWinnerArray[4]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+  );
+  Console.print(
+    `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_NO_BONUS}${lottoWinnerArray[3]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+  );
+  Console.print(
+    `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_BONUS}${lottoWinnerArray[2]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+  );
+  Console.print(
+    `${WINNING_STATISTICS_MESSAGE.MATCH_SIX}${lottoWinnerArray[1]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+  );
+}

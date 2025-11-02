@@ -1,10 +1,7 @@
 import * as InputLotto from '../view/InputView.js';
 import LottoNumberGnerator from '../model/LottoGnerator.js';
 import { LOTTO_CALCULATE_NUMBER } from '../utils/Constants.js';
-import {
-  countRanks,
-  calculateProfitRate,
-} from '../model/CalculateLottoResult.js';
+import { calculatorFinalResults } from '../model/CalculateLottoResult.js';
 import {
   printLottoTicket,
   printProfitRate,
@@ -24,17 +21,15 @@ class App {
     const winningNumber = await InputLotto.getCorrectNumber();
     const bonusNumber = await InputLotto.getBonusNumber();
 
-    // 오름차순으로 몇등인지 배열에 담음
-    // ex: [0,0,0,3,5]
-    const lottoRankArray = lottoObjects.map((ele) =>
-      ele.showFinalResult(winningNumber, bonusNumber),
+    const finalResult = calculatorFinalResults(
+      lottoObjects,
+      winningNumber,
+      bonusNumber,
+      purchaseCost,
     );
-    const sortedlottoRankArray = lottoRankArray.sort((a, b) => a - b);
-    const lottoWinnerArray = countRanks(sortedlottoRankArray);
-    const profitRate = calculateProfitRate(purchaseCost, lottoWinnerArray);
 
-    printStatistics(lottoWinnerArray);
-    printProfitRate(profitRate);
+    printStatistics(finalResult.statistics);
+    printProfitRate(finalResult.profitRate);
   }
 }
 

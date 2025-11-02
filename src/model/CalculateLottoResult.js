@@ -1,4 +1,5 @@
 import { RANKING_INFO } from '../utils/Constants.js';
+import sortLotto from '../utils/SortLotto.js';
 
 /**
  * 등수가 담겨있는 배열을 각 등수 별로 몇개인지 세어 새로운 배열로 반환하는 함수
@@ -41,4 +42,20 @@ export function calculateProfitRate(purchseCost, lottoWinnerArray) {
   const roundedRate = Math.round(returnRate * 10) / 10;
 
   return roundedRate;
+}
+
+export function calculatorFinalResults(
+  lottoObjects,
+  winningNumber,
+  bonusNumber,
+  purchaseCost,
+) {
+  const lottoRankArray = lottoObjects.map((lotto) =>
+    lotto.showFinalResult(winningNumber, bonusNumber),
+  );
+  const sortedLottoRankArray = sortLotto(lottoRankArray);
+  const statistics = countRanks(sortedLottoRankArray);
+  const profitRate = calculateProfitRate(purchaseCost, statistics);
+
+  return { statistics, profitRate };
 }

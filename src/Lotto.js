@@ -76,5 +76,19 @@ class Lotto {
     }
     return 0;
   }
+
+  /**
+   * 당첨 번호와 보너스 번호를 받아, 현재 로또 티켓의 최종 등수를 반환하는 함수
+   * @param {number[]} correctNumbers - 당첨 번호 6개가 담긴 배열
+   * @param {number[]} bonusNumber - 보너스 번호 1개가 담긴 배열
+   * @returns {number[]} - 정렬되지 않은 당첨 등수가 담긴 배열
+   */
+  showFinalResult(correctNumbers, bonusNumber) {
+    const matchCount = this.#compareOverlappingNumbers(correctNumbers);
+
+    const result = this.#calculateRank(matchCount, bonusNumber);
+
+    return result;
+  }
 }
 export default Lotto;

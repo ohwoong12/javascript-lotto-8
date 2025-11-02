@@ -1,5 +1,5 @@
 import * as InputLotto from './view/InputView.js';
-import LottoGnerator from './LottoGnerator.js';
+import LottoNumberGnerator from './LottoGnerator.js';
 import { LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
@@ -17,7 +17,7 @@ class App {
 
     const purchaseCount = purchaseCost / LOTTO_CALCULATE_NUMBER.PER_LOTTO_PRICE;
 
-    const lottoNumberArray = LottoGnerator(purchaseCount);
+    const lottoNumberArray = LottoNumberGnerator(purchaseCount);
 
     const sortedLottoNumberArray = sortLotto(lottoNumberArray);
 

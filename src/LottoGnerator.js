@@ -5,7 +5,7 @@ import { Random } from '@woowacourse/mission-utils';
  * @param {number} purchaseCount - 로또 구매 수량
  * @returns {string[]} - 최종 로또 용지
  */
-export default function LottoGnerator(purchaseCount) {
+export default function LottoNumberGnerator(purchaseCount) {
   const totalLottoTickets = [];
 
   for (let i = 0; i < purchaseCount; i += 1) {

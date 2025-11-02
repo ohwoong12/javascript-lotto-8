@@ -1,6 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import {
   LOTTO_CALCULATE_NUMBER,
+  RANKING_INFO,
   WINNING_STATISTICS_MESSAGE,
 } from './Constants.js';
 
@@ -28,21 +29,13 @@ export function printStatistics(ranksArray) {
   Console.print(lottoWinnerArray);
 
   Console.print(`${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
-  Console.print(
-    `${WINNING_STATISTICS_MESSAGE.MATCH_THREE}${lottoWinnerArray[5]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
-  );
-  Console.print(
-    `${WINNING_STATISTICS_MESSAGE.MATCH_FOUR}${lottoWinnerArray[4]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
-  );
-  Console.print(
-    `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_NO_BONUS}${lottoWinnerArray[3]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
-  );
-  Console.print(
-    `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_BONUS}${lottoWinnerArray[2]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
-  );
-  Console.print(
-    `${WINNING_STATISTICS_MESSAGE.MATCH_SIX}${lottoWinnerArray[1]}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
-  );
+
+  RANKING_INFO.forEach((rankInfo) => {
+    const count = lottoWinnerArray[rankInfo.index];
+    Console.print(
+      `${rankInfo.message}${count}${WINNING_STATISTICS_MESSAGE.AMOUNT}`,
+    );
+  });
 }
 
 /**

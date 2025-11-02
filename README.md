@@ -165,3 +165,7 @@
 ---
 
 ### 테스트 함수 목록
+
+LottoGenerator.test.js: 로또 번호가 정상적으로 생성되는지 테스트
+
+SortLotto.test.js: 이차원 배열을 오름차순으로 정렬되는지 테스트

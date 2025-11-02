@@ -12,7 +12,7 @@ class Lotto {
   // eslint-disable-next-line
   #validate(numbers) {
     if (numbers.length !== 6) {
-      throw new Error("[ERROR] 로또 번호는 6개여야 합니다.");
+      throw new Error('[ERROR] 로또 번호는 6개여야 합니다.');
     }
     const set = new Set(numbers);
     if (numbers.length !== set.size) {
@@ -83,7 +83,7 @@ class Lotto {
    * 당첨 번호와 보너스 번호를 받아, 현재 로또 티켓의 최종 등수를 반환하는 함수
    * @param {number[]} correctNumbers - 당첨 번호 6개가 담긴 배열
    * @param {number[]} bonusNumber - 보너스 번호 1개가 담긴 배열
-   * @returns {number[]} - 정렬되지 않은 당첨 등수가 담긴 배열
+   * @returns {number} - 당첨 등수
    */
   showFinalResult(correctNumbers, bonusNumber) {
     const matchCount = this.#compareOverlappingNumbers(correctNumbers);

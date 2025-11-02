@@ -20,9 +20,7 @@ export function countRanks(ranksArray) {
  * 당첨 통계를 출력하는 함수
  * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
  */
-export function printStatistics(ranksArray) {
-  const lottoWinnerArray = countRanks(ranksArray);
-
+export function printStatistics(lottoWinnerArray) {
   Console.print(`${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
 
   RANKING_INFO.forEach((rankInfo) => {
@@ -53,8 +51,7 @@ export function calculateLottoPrizeMoney(lottoWinnerArray) {
  * @param {number} purchseCost - 구매 비용
  * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
  */
-export function printProfitRate(purchseCost, ranksArray) {
-  const lottoWinnerArray = countRanks(ranksArray);
+export function printProfitRate(purchseCost, lottoWinnerArray) {
   const buyRate = purchseCost;
   const winRate = calculateLottoPrizeMoney(lottoWinnerArray);
   const returnRate = (winRate / buyRate) * 100;

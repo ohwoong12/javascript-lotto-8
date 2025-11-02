@@ -4,7 +4,11 @@ import LottoGnerator from './LottoGnerator.js';
 import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
-import { printProfitRate, printStatistics } from './CalculateLottoResult.js';
+import {
+  countRanks,
+  printProfitRate,
+  printStatistics,
+} from './CalculateLottoResult.js';
 import { printLottoTicket } from './view/OutputView.js';
 
 class App {
@@ -37,8 +41,10 @@ class App {
     );
     const sortedlottoRankArray = lottoRankArray.sort((a, b) => a - b);
 
-    printStatistics(sortedlottoRankArray);
-    printProfitRate(purchaseCost, sortedlottoRankArray);
+    const lottoWinnerArray = countRanks(sortedlottoRankArray);
+
+    printStatistics(lottoWinnerArray);
+    printProfitRate(purchaseCost, lottoWinnerArray);
   }
 }
 

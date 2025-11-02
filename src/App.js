@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import * as InputLotto from './InputLotto.js';
+import * as InputLotto from './view/InputView.js';
 import LottoGnerator from './LottoGnerator.js';
 import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';

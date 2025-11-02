@@ -24,6 +24,39 @@ export const LOTTO_CALCULATE_NUMBER = {
   FIFTH_WIN_LOTTO: 5000,
 };
 
+export const RANKING_INFO = [
+  {
+    rank: 5,
+    index: 5,
+    message: `${WINNING_STATISTICS_MESSAGE.MATCH_THREE}`,
+    prize: `${LOTTO_CALCULATE_NUMBER.FIFTH_WIN_LOTTO}`,
+  },
+  {
+    rank: 4,
+    index: 4,
+    message: `${WINNING_STATISTICS_MESSAGE.MATCH_FOUR}`,
+    prize: `${LOTTO_CALCULATE_NUMBER.FOURTH_WIN_LOTTO}`,
+  },
+  {
+    rank: 3,
+    index: 3,
+    message: `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_NO_BONUS}`,
+    prize: `${LOTTO_CALCULATE_NUMBER.THIRD_WIN_LOTTO}`,
+  },
+  {
+    rank: 2,
+    index: 2,
+    message: `${WINNING_STATISTICS_MESSAGE.MATCH_FIVE_BONUS}`,
+    prize: `${LOTTO_CALCULATE_NUMBER.SECOND_WIN_LOTTO}`,
+  },
+  {
+    rank: 1,
+    index: 1,
+    message: `${WINNING_STATISTICS_MESSAGE.MATCH_SIX}`,
+    prize: `${LOTTO_CALCULATE_NUMBER.FIRST_WIN_LOTTO}`,
+  },
+];
+
 export const ERROR_MESSAGE = {
   INVALID_INPUT: '입력이 되지 않았습니다.',
   INVALID_PURCHASE_MONEY: '로또 구매 금액은 1,000원 단위로만 가능합니다.',

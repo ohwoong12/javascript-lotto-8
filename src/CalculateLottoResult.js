@@ -44,14 +44,13 @@ export function printStatistics(ranksArray) {
  * @returns {number} - 총 상금
  */
 export function calculateLottoPrizeMoney(lottoWinnerArray) {
-  const winRate =
-    lottoWinnerArray[5] * LOTTO_CALCULATE_NUMBER.FIFTH_WIN_LOTTO +
-    lottoWinnerArray[4] * LOTTO_CALCULATE_NUMBER.FOURTH_WIN_LOTTO +
-    lottoWinnerArray[3] * LOTTO_CALCULATE_NUMBER.THIRD_WIN_LOTTO +
-    lottoWinnerArray[2] * LOTTO_CALCULATE_NUMBER.SECOND_WIN_LOTTO +
-    lottoWinnerArray[1] * LOTTO_CALCULATE_NUMBER.FIRST_WIN_LOTTO;
+  const totalPrize = RANKING_INFO.reduce((sum, rankInfo) => {
+    const count = lottoWinnerArray[rankInfo.index];
 
-  return winRate;
+    return sum + count * rankInfo.prize;
+  }, 0);
+
+  return totalPrize;
 }
 
 /**

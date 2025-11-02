@@ -1,7 +1,7 @@
 import * as InputLotto from '../view/InputView.js';
 import LottoNumberGnerator from '../model/LottoGnerator.js';
 import { LOTTO_CALCULATE_NUMBER } from '../utils/Constants.js';
-import { calculatorFinalResults } from '../model/CalculateLottoResult.js';
+import { calculatorFinalResults } from '../model/CalculateFinalResults.js';
 import {
   printLottoTicket,
   printProfitRate,

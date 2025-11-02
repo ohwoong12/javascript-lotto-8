@@ -22,7 +22,6 @@ export function countRanks(ranksArray) {
  */
 export function printStatistics(ranksArray) {
   const lottoWinnerArray = countRanks(ranksArray);
-  Console.print(lottoWinnerArray);
 
   Console.print(`${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
 

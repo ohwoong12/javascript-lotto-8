@@ -4,6 +4,7 @@ import LottoGnerator from './LottoGnerator.js';
 import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
+import { printProfitRate, printStatistics } from './CalculateLottoResult.js';
 
 class App {
   async run() {
@@ -39,6 +40,7 @@ class App {
     const sortedlottoRankArray = lottoRankArray.sort((a, b) => a - b);
 
     printStatistics(sortedlottoRankArray);
+    printProfitRate(purchaseCost, sortedlottoRankArray);
   }
 }
 

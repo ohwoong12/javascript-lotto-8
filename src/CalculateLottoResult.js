@@ -1,3 +1,9 @@
+import { Console } from '@woowacourse/mission-utils';
+import {
+  LOTTO_CALCULATE_NUMBER,
+  WINNING_STATISTICS_MESSAGE,
+} from './Constants.js';
+
 /**
  * 등수가 담겨있는 배열을 각 등수 별로 몇개인지 세어 새로운 배열로 반환하는 함수
  * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
@@ -53,4 +59,19 @@ export function calculateLottoPrizeMoney(lottoWinnerArray) {
     lottoWinnerArray[1] * LOTTO_CALCULATE_NUMBER.FIRST_WIN_LOTTO;
 
   return winRate;
+}
+
+/**
+ * 총 수익률을 계산하여 출력하는 함수
+ * @param {number} purchseCost - 구매 비용
+ * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
+ */
+export function printProfitRate(purchseCost, ranksArray) {
+  const lottoWinnerArray = countRanks(ranksArray);
+  const buyRate = purchseCost;
+  const winRate = calculateLottoPrizeMoney(lottoWinnerArray);
+  const returnRate = (winRate / buyRate) * 100;
+  const roundedRate = Math.round(returnRate * 10) / 10;
+
+  Console.print(`총 수익률은 ${roundedRate}%입니다.`);
 }

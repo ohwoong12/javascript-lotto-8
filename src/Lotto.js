@@ -41,5 +41,14 @@ class Lotto {
 
     return matchCount;
   }
+
+  /**
+   * 로또 구매 번호에 보너스 번호 포함 여부만 계산하여 반환하는 함수
+   * @param {number[]} bonusNumber - 로또 보너스 번호가 담긴 배열
+   * @returns {boolean}
+   */
+  #hasBonusNumber(bonusNumber) {
+    return this.#numbers.includes(bonusNumber);
+  }
 }
 export default Lotto;

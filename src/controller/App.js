@@ -1,16 +1,16 @@
-import * as InputLotto from './view/InputView.js';
-import LottoNumberGnerator from './model/LottoGnerator.js';
-import { LOTTO_CALCULATE_NUMBER } from './utils/Constants.js';
+import * as InputLotto from '../view/InputView.js';
+import LottoNumberGnerator from '../model/LottoGnerator.js';
+import { LOTTO_CALCULATE_NUMBER } from '../utils/Constants.js';
 import {
   countRanks,
   calculateProfitRate,
-} from './model/CalculateLottoResult.js';
+} from '../model/CalculateLottoResult.js';
 import {
   printLottoTicket,
   printProfitRate,
   printPurchaseCount,
   printStatistics,
-} from './view/OutputView.js';
+} from '../view/OutputView.js';
 
 class App {
   async run() {

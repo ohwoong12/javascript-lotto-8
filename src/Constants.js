@@ -6,6 +6,7 @@ export const CONSOLE_MESSAGE = {
 };
 
 export const WINNING_STATISTICS_MESSAGE = {
+  WINNING_STATISTICS: '당첨 통계\n---',
   AMOUNT: '개',
   MATCH_THREE: '3개 일치 (5,000원) - ',
   MATCH_FOUR: '4개 일치 (50,000원) - ',

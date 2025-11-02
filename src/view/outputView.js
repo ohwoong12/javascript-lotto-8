@@ -21,7 +21,6 @@ export function printLottoTicket(lottoObjects) {
   for (let i = 0; i < lottoObjects.length; i += 1) {
     lottoObjects[i].printLottoNumbers();
   }
-  Console.print('');
 }
 
 /**
@@ -29,7 +28,7 @@ export function printLottoTicket(lottoObjects) {
  * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
  */
 export function printStatistics(lottoWinnerArray) {
-  Console.print(`${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
+  Console.print(`\n${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);
 
   RANKING_INFO.forEach((rankInfo) => {
     const count = lottoWinnerArray[rankInfo.index];

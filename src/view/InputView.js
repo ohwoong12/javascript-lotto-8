@@ -41,7 +41,7 @@ export async function getLottoMoney() {
  */
 export async function getCorrectNumber() {
   const winningNumber = await Console.readLineAsync(
-    `${CONSOLE_MESSAGE.CORRECT_NUMBER}\n`,
+    `\n${CONSOLE_MESSAGE.CORRECT_NUMBER}\n`,
   );
 
   const splitWinningNumber = stringToInt(splitValue(winningNumber));
@@ -55,7 +55,7 @@ export async function getCorrectNumber() {
  */
 export async function getBonusNumber() {
   const bonusNumber = await Console.readLineAsync(
-    `${CONSOLE_MESSAGE.BONUS_NUMBER}\n`,
+    `\n${CONSOLE_MESSAGE.BONUS_NUMBER}\n`,
   );
 
   const splitBonusNumber = stringToInt(splitValue(bonusNumber));

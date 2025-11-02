@@ -1,13 +1,14 @@
 import { Console } from '@woowacourse/mission-utils';
 import * as InputLotto from './view/InputView.js';
 import LottoGnerator from './LottoGnerator.js';
-import { CONSOLE_MESSAGE, LOTTO_CALCULATE_NUMBER } from './Constants.js';
+import { LOTTO_CALCULATE_NUMBER } from './Constants.js';
 import sortLotto from './SortLotto.js';
 import Lotto from './Lotto.js';
 import { countRanks, calculateProfitRate } from './CalculateLottoResult.js';
 import {
   printLottoTicket,
   printProfitRate,
+  printPurchaseCount,
   printStatistics,
 } from './view/OutputView.js';
 
@@ -26,6 +27,7 @@ class App {
       (ticketNumbers) => new Lotto(ticketNumbers),
     );
 
+    printPurchaseCount(purchaseCount);
     printLottoTicket(lottoObjects);
 
     const winningNumber = await InputLotto.getCorrectNumber();

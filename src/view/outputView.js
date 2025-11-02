@@ -1,5 +1,17 @@
 import { Console } from '@woowacourse/mission-utils';
-import { RANKING_INFO, WINNING_STATISTICS_MESSAGE } from '../Constants.js';
+import {
+  CONSOLE_MESSAGE,
+  RANKING_INFO,
+  WINNING_STATISTICS_MESSAGE,
+} from '../Constants.js';
+
+/**
+ * 로또 구매 수량을 출력하는 함수
+ * @param {number} purchaseCount
+ */
+export function printPurchaseCount(purchaseCount) {
+  Console.print(`\n${purchaseCount}${CONSOLE_MESSAGE.PURCHASE_AMOUNT}`);
+}
 
 /**
  * 발행된 로또 번호를 출력하는 함수

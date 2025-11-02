@@ -3,7 +3,7 @@ import {
   CONSOLE_MESSAGE,
   RANKING_INFO,
   WINNING_STATISTICS_MESSAGE,
-} from '../Constants.js';
+} from '../utils/Constants.js';
 
 /**
  * 로또 구매 수량을 출력하는 함수

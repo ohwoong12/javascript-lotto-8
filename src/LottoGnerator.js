@@ -1,5 +1,5 @@
 import { Random } from '@woowacourse/mission-utils';
-import sortLotto from './SortLotto.js';
+import sortLotto from './utils/SortLotto.js';
 import Lotto from './Lotto.js';
 
 /**

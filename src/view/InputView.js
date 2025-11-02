@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { CONSOLE_MESSAGE } from '../Constants.js';
+import { CONSOLE_MESSAGE } from '../utils/Constants.js';
 
 /**
  * 주어진 값을 배열로 변환하는 함수

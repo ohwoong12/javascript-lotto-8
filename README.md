@@ -175,3 +175,5 @@
 LottoGenerator.test.js: 로또 번호가 정상적으로 생성되는지 테스트
 
 SortLotto.test.js: 이차원 배열을 오름차순으로 정렬되는지 테스트
+
+Validation.test.js: 유효성 검사 함수에 대한 테스트

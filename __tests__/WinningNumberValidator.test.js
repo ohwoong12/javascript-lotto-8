@@ -50,7 +50,6 @@ describe('WinningNumberValidator 테스트', () => {
 
     test('당첨 번호 중 정수가 아닌 숫자가 있을 시 에러 발생 (from validateWinningNumberIsInteger)', () => {
       const input = [1, 2, 3, 4, 5, 5.5];
-      // 해당 함수는 COMMON.RANGE 에러를 던지도록 구현되어 있습니다.
       expect(() => validateWinningNumber(input)).toThrow(
         ERROR_MESSAGE.COMMON.RANGE,
       );

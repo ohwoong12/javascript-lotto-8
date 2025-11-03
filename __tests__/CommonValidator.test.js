@@ -1,5 +1,6 @@
 import {
   validateTypeNumber,
+  validateInputBlank,
   validateNumberIsInteger,
   validateBonusNumberRange,
 } from '../src/utils/CommonValidator.js';
@@ -9,7 +10,6 @@ describe('CommonValidator 테스트', () => {
   describe('validateTypeNumber', () => {
     test('입력 값이 숫자가 아닐 시 에러 발생', () => {
       const input = '100j';
-      // validateTypeNumber는 개행 문자를 포함하여 에러를 던집니다.
       expect(() => validateTypeNumber(input)).toThrow(
         `${ERROR_MESSAGE.COMMON.TYPE}\n`,
       );
@@ -17,8 +17,8 @@ describe('CommonValidator 테스트', () => {
 
     test('입력 값이 공백일 시 에러 발생', () => {
       const input = ' ';
-      expect(() => validateTypeNumber(input)).toThrow(
-        `${ERROR_MESSAGE.COMMON.TYPE}\n`,
+      expect(() => validateInputBlank(input)).toThrow(
+        `${ERROR_MESSAGE.COMMON.TYPE}`,
       );
     });
 

@@ -172,7 +172,7 @@
 
 ### 생성한 테스트 함수 목록
 
-LottoGenerator.test.js: 로또 번호가 정상적으로 생성되는지 테스트
+-LottoGenerator.test.js: 로또 번호가 정상적으로 생성되는지 테스트
 
 SortLotto.test.js: 이차원 배열을 오름차순으로 정렬되는지 테스트
 
@@ -184,6 +184,49 @@ WinningNumberValidator.test.js: 당첨 번호와 관련된 유효성 검사 함�
 
 BonusNumberValidator.test.js: 보너스 번호와 관련된 유효성 검사 함수 테스트
 
----
+### 어려웠던 점
 
-### 진행하면서 느낀 것
+기존 객체지향에 대해 깊게 알지 못했고, 그러다보니 실제로 사용하는데 어려움이 많이 있었다.
+
+하지만 하루종일 객체지향에 대해 찾아보고 디자인 패턴과 객체지향적 설계 원칙을 찾았다.
+
+그러다보니 어느샌가 코드를 쓰면서 이 부분은 어떻게 써야 하겠다가 감이 조금씩 오기 시작했다.
+
+### 파일 구조
+
+```plain
+javascript-lotto-8
+├─ .npmrc
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ src
+│  ├─ controller
+│  │  ├─ App.js
+│  │  └─ LottoController.js
+│  ├─ index.js
+│  ├─ model
+│  │  ├─ CalculateFinalResults.js
+│  │  ├─ Lotto.js
+│  │  └─ LottoGnerator.js
+│  ├─ utils
+│  │  ├─ BonusNumberValidator.js
+│  │  ├─ CommonValidator.js
+│  │  ├─ Constants.js
+│  │  ├─ PurchaseCostValidator.js
+│  │  ├─ SortLotto.js
+│  │  └─ WinningNumberValidator.js
+│  └─ view
+│     ├─ InputView.js
+│     └─ OutputView.js
+└─ __tests__
+   ├─ ApplicationTest.js
+   ├─ BonusNumberValidator.test.js
+   ├─ CommonValidator.test.js
+   ├─ LottoGnerator.test.js
+   ├─ LottoTest.js
+   ├─ PurchaseCostValidator.test.js
+   ├─ SortLotto.test.js
+   └─ WinningNumberValidator.test.js
+
+```

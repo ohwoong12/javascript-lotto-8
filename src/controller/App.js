@@ -19,7 +19,7 @@ class App {
     printLottoTicket(lottoObjects);
 
     const winningNumber = await InputLotto.getCorrectNumber();
-    const bonusNumber = await InputLotto.getBonusNumber();
+    const bonusNumber = await InputLotto.getBonusNumber(winningNumber);
 
     const finalResult = calculatorFinalResults(
       lottoObjects,

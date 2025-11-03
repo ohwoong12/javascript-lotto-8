@@ -1,4 +1,4 @@
-import Lotto from '../src/model/Lotto';
+import Lotto from '../src/model/Lotto.js';
 import { Console } from '@woowacourse/mission-utils';
 
 describe('로또 클래스 테스트', () => {

@@ -170,13 +170,19 @@
 
 ---
 
-### 테스트 함수 목록
+### 생성한 테스트 함수 목록
 
 LottoGenerator.test.js: 로또 번호가 정상적으로 생성되는지 테스트
 
 SortLotto.test.js: 이차원 배열을 오름차순으로 정렬되는지 테스트
 
-Validation.test.js: 유효성 검사 함수에 대한 테스트
+CommonValidator.test.js: 유효성 검사에 공통적으로 사용되는 함수 테스트
+
+PurchaseCostValidator.test.js: 구매 금액과 관련된 유효성 검사 함수 테스트
+
+WinningNumberValidator.test.js: 당첨 번호와 관련된 유효성 검사 함수 테스트
+
+BonusNumberValidator.test.js: 보너스 번호와 관련된 유효성 검사 함수 테스트
 
 ---
 

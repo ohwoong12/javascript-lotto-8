@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import LottoGnerator from '../src/model/LottoGnerator.js';
+import LottoNumberGnerator from '../src/model/LottoGenerator.js';
 import Lotto from '../src/model/Lotto.js';
 
 const mockRandoms = (numbers) => {
@@ -33,7 +33,7 @@ describe('로또 생성 함수 테스트', () => {
     mockRandoms(mockedNumbers);
 
     // 2. when
-    const result = LottoGnerator(purchaseCount);
+    const result = LottoNumberGnerator(purchaseCount);
 
     // 3. then
     expect(MissionUtils.Random.pickUniqueNumbersInRange).toHaveBeenCalledTimes(
@@ -59,7 +59,7 @@ describe('로또 생성 함수 테스트', () => {
     mockRandoms(mockedNumbers);
 
     // 2. when
-    const result = LottoGnerator(purchaseCount);
+    const result = LottoNumberGnerator(purchaseCount);
 
     // 3. then
     expect(result).toEqual(expectedLottos);

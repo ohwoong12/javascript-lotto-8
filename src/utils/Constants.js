@@ -58,11 +58,25 @@ export const RANKING_INFO = [
 ];
 
 export const ERROR_MESSAGE = {
-  INVALID_PURCHASE_MONEY:
-    '[ERROR] 로또 구매 금액은 1,000원 단위로만 가능합니다.',
-  INVALID_CORRECT_NUMBER: '[ERROR] 당첨 번호가 6개만 입력 가능합니다.',
-  INVALID_BONUS_NUMBER: '[ERROR] 보너스 번호는 1개만 입력 가능합니다.',
-  INVALID_INPUT_TYPE: '[ERROR] 숫자만 입력 가능합니다.',
-  INVALID_LOTTO_NUMBER_RANGE:
-    '[ERROR] 로또 번호가 1~45 범위내로 발행되지 않았습니다.',
+  PURCHASE: {
+    // 구매 금액 관련
+    UNIT: '[ERROR] 로또 구매 금액은 1,000원 단위로만 가능합니다.',
+    RANGE: '[ERROR] 로또 구매 금액은 양의 정수만 가능합니다.',
+  },
+  WINNING_NUMBER: {
+    // 당첨 번호 관련
+    COUNT: '[ERROR] 당첨 번호가 6개만 입력 가능합니다.',
+    DUPLICATE: '[ERROR] 당첨 번호는 중복이 불가능합니다.',
+    SEPARATOR: '[ERROR] 쉼표 외에 구분자는 사용할 수 없습니다.',
+  },
+  BONUS_NUMBER: {
+    // 보너스 번호 관련
+    COUNT: '[ERROR] 보너스 번호는 1개만 입력 가능합니다.',
+    DUPLICATE: '[ERROR] 당첨 번호와 보너스 번호는 중복이 불가능합니다.',
+  },
+  COMMON: {
+    // 공통 에러
+    TYPE: '[ERROR] 양의 정수만 입력 가능합니다.',
+    RANGE: '[ERROR] 1~45의 양의 정수만 입력 가능합니다.',
+  },
 };

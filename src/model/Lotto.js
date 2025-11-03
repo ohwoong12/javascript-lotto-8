@@ -8,7 +8,6 @@ class Lotto {
     this.#numbers = numbers;
   }
 
-  // 추후 검사 로직 코드 개선 예정
   // eslint-disable-next-line
   #validate(numbers) {
     if (numbers.length !== 6) {
@@ -18,16 +17,12 @@ class Lotto {
     if (numbers.length !== set.size) {
       throw new Error('[ERROR] 로또 번호에 중복된 숫자가 있습니다.');
     }
-    if (numbers.every((ele) => typeof ele === 'number') !== true) {
-      throw new Error('[ERROR] 숫자만 입력 가능');
-    }
   }
 
   // TODO: 추가 기능 구현
 
   // 생성자를 통해 설정된 로또 번호를 출력하는 함수
   printLottoNumbers() {
-    // Console.print(this.#numbers);
     Console.print(`[${this.#numbers.join(', ')}]`);
   }
 
@@ -57,25 +52,20 @@ class Lotto {
    * 당첨된 번호의 개수를 기반으로 등수를 산정하는 함수
    * @param {number[]} matchCount - 당첨된 번호의 개수가 담긴 배열
    * @param {boolean} bonusNumber - 보너스 번호 존재 여부
-   * @returns
+   * @returns - 로또 용지 별 당첨 번호 매칭 개수
    */
   #calculateRank(matchCount, bonusNumber) {
     const hasBonusNumber = this.#hasBonusNumber(bonusNumber);
-    if (matchCount === 6) {
-      return 1;
-    }
-    if (matchCount === 5 && hasBonusNumber) {
-      return 2;
-    }
-    if (matchCount === 5 && !hasBonusNumber) {
-      return 3;
-    }
-    if (matchCount === 4) {
-      return 4;
-    }
-    if (matchCount === 3) {
-      return 5;
-    }
+    if (matchCount === 6) return 1;
+
+    if (matchCount === 5 && hasBonusNumber) return 2;
+
+    if (matchCount === 5 && !hasBonusNumber) return 3;
+
+    if (matchCount === 4) return 4;
+
+    if (matchCount === 3) return 5;
+
     return 0;
   }
 

@@ -25,7 +25,7 @@ export function printLottoTicket(lottoObjects) {
 
 /**
  * 당첨 통계를 출력하는 함수
- * @param {number[]} ranksArray - 각 로또 한장의 등수가 담겨있는 배열
+ * @param {number[]} lottoWinnerArray - 각 로또 한장의 등수가 담겨있는 배열
  */
 export function printStatistics(lottoWinnerArray) {
   Console.print(`\n${WINNING_STATISTICS_MESSAGE.WINNING_STATISTICS}`);

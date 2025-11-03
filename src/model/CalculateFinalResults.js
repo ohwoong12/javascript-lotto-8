@@ -44,6 +44,14 @@ export function calculateProfitRate(purchseCost, lottoWinnerArray) {
   return roundedRate;
 }
 
+/**
+ * 각 등별로 당첨된 로또 개수와 수익률을 계산하는 함수
+ * @param {Lotto} lottoObjects - 로또 객체가 담겨있는 배열
+ * @param {number[]} winningNumber - 당첨 번호
+ * @param {number[]} bonusNumber - 보너스 번호
+ * @param {number} purchaseCost - 로또 구매 비용
+ * @returns {number[],number} - 각 로또 한장의 등수가 담겨있는 배열
+ */
 export function calculatorFinalResults(
   lottoObjects,
   winningNumber,

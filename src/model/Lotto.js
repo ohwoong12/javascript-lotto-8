@@ -1,4 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
+import { RANK } from '../utils/Constants.js';
 
 class Lotto {
   #numbers;
@@ -56,15 +57,17 @@ class Lotto {
    */
   #calculateRank(matchCount, bonusNumber) {
     const hasBonusNumber = this.#hasBonusNumber(bonusNumber);
-    if (matchCount === 6) return 1;
+    if (matchCount === RANK.MATCH_COUNT.FIRST) return RANK.RANK.FIRST;
 
-    if (matchCount === 5 && hasBonusNumber) return 2;
+    if (matchCount === RANK.MATCH_COUNT.SECOND_OR_THIRD && hasBonusNumber)
+      return RANK.RANK.SECOND;
 
-    if (matchCount === 5 && !hasBonusNumber) return 3;
+    if (matchCount === RANK.MATCH_COUNT.SECOND_OR_THIRD && !hasBonusNumber)
+      return RANK.RANK.THIRD;
 
-    if (matchCount === 4) return 4;
+    if (matchCount === RANK.MATCH_COUNT.FOURTH) return RANK.RANK.FOURTH;
 
-    if (matchCount === 3) return 5;
+    if (matchCount === RANK.MATCH_COUNT.FIFTH) return RANK.RANK.FIFTH;
 
     return 0;
   }

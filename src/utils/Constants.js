@@ -24,6 +24,23 @@ export const LOTTO_CALCULATE_NUMBER = {
   FIFTH_WIN_LOTTO: 5000,
 };
 
+export const RANK = {
+  MATCH_COUNT: {
+    FIRST: 6,
+    SECOND_OR_THIRD: 5,
+    FOURTH: 4,
+    FIFTH: 3,
+  },
+  RANK: {
+    FIRST: 1,
+    SECOND: 2,
+    THIRD: 3,
+    FOURTH: 4,
+    FIFTH: 5,
+    NONE: 0,
+  },
+};
+
 export const RANKING_INFO = [
   {
     rank: 5,

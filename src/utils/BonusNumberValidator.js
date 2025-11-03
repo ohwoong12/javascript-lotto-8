@@ -3,6 +3,7 @@ import {
   validateTypeNumber,
   validateNumberIsInteger,
   validateBonusNumberRange,
+  validateInputBlank,
 } from './CommonValidator.js';
 
 /**
@@ -28,6 +29,7 @@ function validateWinningNumberAndBounusNumberDuplicate(
  * @param {number[]} winningNumber - 당첨 번호가 담긴 배열
  */
 export default function validateBonusNumber(bonusNumber, winningNumber) {
+  validateInputBlank(bonusNumber);
   validateTypeNumber(bonusNumber);
   validateNumberIsInteger(bonusNumber);
   validateBonusNumberRange(bonusNumber);

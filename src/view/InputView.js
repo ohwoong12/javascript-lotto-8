@@ -6,6 +6,7 @@ import {
   validateWinningNumberSeparator,
 } from '../utils/WinningNumberValidator.js';
 import validateBonusNumber from '../utils/BonusNumberValidator.js';
+import { validateInputBlank } from '../utils/CommonValidator.js';
 
 /**
  * 주어진 값을 배열로 변환하는 함수
@@ -59,6 +60,7 @@ export async function getCorrectNumber() {
       const winningNumber = await Console.readLineAsync(
         `\n${CONSOLE_MESSAGE.CORRECT_NUMBER}\n`,
       );
+      validateInputBlank(winningNumber);
       validateWinningNumberSeparator(winningNumber);
       const splitWinningNumber = stringToInt(splitValue(winningNumber));
 

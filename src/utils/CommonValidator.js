@@ -1,5 +1,11 @@
 import { ERROR_MESSAGE } from './Constants.js';
 
+export function validateInputBlank(input) {
+  if (!input || String(input).trim() === '') {
+    throw new Error(ERROR_MESSAGE.COMMON.TYPE);
+  }
+}
+
 /**
  * 입력값이 숫자인지 검사하는 함수
  * @param {string} value - 숫자 입력값

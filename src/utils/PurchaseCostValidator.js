@@ -2,6 +2,7 @@ import { ERROR_MESSAGE } from './Constants.js';
 import {
   validateTypeNumber,
   validateNumberIsInteger,
+  validateInputBlank,
 } from './CommonValidator.js';
 
 /**
@@ -33,6 +34,7 @@ function validatePurchaseCostUnit(purchaseCost) {
  * @param {number} purchaseCost - 로또 구매 금액
  */
 export default function validatePurchaseCost(purchaseCost) {
+  validateInputBlank(purchaseCost);
   validateTypeNumber(purchaseCost);
   validateNumberIsInteger(purchaseCost);
   validatePurchaseCostIsPositive(purchaseCost);
